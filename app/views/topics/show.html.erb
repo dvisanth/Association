@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @topic.name %>
+</p>
+
+<p>
+  <strong>Facts:</strong>
+  <%= @topic.facts %>
+</p>
+<h2>Posts</h2>
+<% @topic.posts.each { |post| %>
+<ul>
+      <li><%=  post.body  %></li>
+</ul>
+<%  } %>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Add Post', topic_posts_path(@topic) %> |
+<%= link_to 'Back', topics_path %>
